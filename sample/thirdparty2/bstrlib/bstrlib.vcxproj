@@ -35,15 +35,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="bstest.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{7D0B96EA-64E7-4069-8F77-89DDA82C3110}</ProjectGuid>
+    <ProjectGuid>{ED3AB3F0-DA5D-4B1F-A686-9BC83A986479}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SampleDll</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>fontconfig</ProjectName>
+    <ProjectName>bstrlib</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -162,7 +162,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_X86_;SKYOS32;_CRT_SECURE_NO_WARNINGS;_MSC_VER=1920;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_M_IX86;SKYOS32;_CRT_SECURE_NO_WARNINGS;_MSC_VER=1920;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>false</SDLCheck>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>false</ExceptionHandling>
@@ -173,7 +173,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <AdditionalOptions>/Oy   /arch:SSE %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4819;2440</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>./;../include;$(YUZA_ROOT)/corelib/include;$(YUZA_ROOT)/runtime/include;$(YUZA_ROOT)/support/include;$(YUZA_ROOT)/thirdparty/fontconfig</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;../include;$(YUZA_ROOT)/corelib/include;$(YUZA_ROOT)/runtime/include;$(YUZA_ROOT)/support/include;$(YUZA_ROOT)/thirdparty2/bstrlib</AdditionalIncludeDirectories>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <UndefineAllPreprocessorDefinitions>true</UndefineAllPreprocessorDefinitions>
       <OmitFramePointers>true</OmitFramePointers>
@@ -187,18 +187,17 @@
       <EntryPointSymbol>
       </EntryPointSymbol>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
-      <AdditionalDependencies>expat.lib;libuuid.lib;yuzaapi.lib;streams.lib;yuzalib.lib;freetyped.lib;iconv.lib;math.lib;fontconfig.lib;filemanager.lib;systemcall.lib;libcrt.lib;libwin32.lib;exestub.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/runtime/debug;$(YUZA_ROOT)/support/debug;$(YUZA_ROOT)/thirdparty/debug;$(YUZA_ROOT)/thirdparty2/debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>bstrlib.lib;math.lib;filemanager.lib;systemcall.lib;libcrt.lib;libwin32.lib;exestub.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/runtime/debug;$(YUZA_ROOT)/Debug;$(YUZA_ROOT)/support/debug;$(YUZA_ROOT)/thirdparty/debug;$(YUZA_ROOT)/thirdparty2/debug</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <BaseAddress>0x08000000</BaseAddress>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
-      <AdditionalOptions>/safeseh:no /ALIGN:1024
- /SUBSYSTEM:CONSOLE %(AdditionalOptions)</AdditionalOptions>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <SectionAlignment>1024</SectionAlignment>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
