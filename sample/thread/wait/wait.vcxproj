@@ -170,7 +170,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <AdditionalOptions>/Oy   /arch:SSE %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4819;2440</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>./;../include;../../../corelib/include;../../../runtime/include;../../yuza_core;../../../corelib/yuzalib/renderer;../../../runtime/libcrt/input;../../../support/unicodefont;../../../support/hangul;../../../corelib/stl/sgi;../../../corelib/streams;../../../corelib/libwin32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;../include;$(YUZA_ROOT)/corelib/include;$(YUZA_ROOT)/runtime/include;$(YUZA_ROOT)/yuza_core;$(YUZA_ROOT)/corelib/yuzalib/renderer;$(YUZA_ROOT)/runtime/libcrt/input;$(YUZA_ROOT)/support/unicodefont;$(YUZA_ROOT)/support/hangul;$(YUZA_ROOT)/corelib/stl/sgi;$(YUZA_ROOT)/corelib/streams;$(YUZA_ROOT)/corelib/libwin32</AdditionalIncludeDirectories>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <UndefineAllPreprocessorDefinitions>true</UndefineAllPreprocessorDefinitions>
       <OmitFramePointers>true</OmitFramePointers>
@@ -185,7 +185,7 @@
       </EntryPointSymbol>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>filemanager.lib;exestub.lib;libcrt.lib;libwin32.lib;systemcall.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../../$(Configuration);../../../corelib/debug;../../../support\Debug;../../../runtime/debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/support\Debug;$(YUZA_ROOT)/runtime/debug</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>

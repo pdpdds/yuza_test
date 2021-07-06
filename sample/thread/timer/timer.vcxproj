@@ -105,7 +105,7 @@
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>./;../include;../../../corelib/include;../../../runtime/include;../../../corelib/STL/SGI</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;../include;$(YUZA_ROOT)/corelib/include;$(YUZA_ROOT)/runtime/include;$(YUZA_ROOT)/corelib/STL/SGI</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MSC_VER=1920;SKYOS32</PreprocessorDefinitions>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <StringPooling>
@@ -135,7 +135,7 @@
     <Link>
       <AdditionalDependencies>systemcall.lib;libcrt.lib;libwin32.lib;exestub.lib;sdl.lib;yuzalib.lib;yuzaapi.lib;streams.lib;libwin32.lib;filemanager.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>../../../Debug;../../../$(Configuration);../../../corelib/debug;../../../runtime/debug;../../../ThirdParty/SDL/SDL2/debug;../../../ThirdParty/debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/support\Debug;$(YUZA_ROOT)/runtime/debug</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(OutDir)$(TargetName).map</MapFileName>

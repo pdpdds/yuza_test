@@ -169,7 +169,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <AdditionalOptions>/arch:SSE %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4819;2440</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>../../../support/yuza_exception;./;../include;../../../corelib/include;../../../runtime/include;../../yuza_core;../../../corelib/stl/sgi;../../../corelib/streams;../../../support/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(YUZA_ROOT)/support/yuza_exception;./;../include;$(YUZA_ROOT)/corelib/include;$(YUZA_ROOT)/runtime/include;$(YUZA_ROOT)/yuza_core;$(YUZA_ROOT)/corelib/stl/sgi;$(YUZA_ROOT)/corelib/streams;$(YUZA_ROOT)/support/include</AdditionalIncludeDirectories>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <UndefineAllPreprocessorDefinitions>true</UndefineAllPreprocessorDefinitions>
       <OmitFramePointers>false</OmitFramePointers>
@@ -187,7 +187,7 @@
       </EntryPointSymbol>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>yuza_exception.lib;streams.lib;filemanager.lib;exestub.lib;libcrt.lib;systemcall.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../../$(Configuration);../../../corelib/debug;../../../support\Debug;../../../runtime/debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/support\Debug;$(YUZA_ROOT)/runtime/debug</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
