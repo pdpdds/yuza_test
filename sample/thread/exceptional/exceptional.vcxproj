@@ -136,7 +136,7 @@
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
     <Link>
-      <AdditionalDependencies>eastreams.lib;systemcall.lib;libcrt.lib;libwin32.lib;exestub.lib;math.lib;filemanager.lib;eastl.lib</AdditionalDependencies>
+      <AdditionalDependencies>systemcall.lib;libcrt.lib;libwin32.lib;exestub.lib;math.lib;filemanager.lib;yuzalib.lib;streams.lib;yuzaapi.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/support\Debug;$(YUZA_ROOT)/runtime/debug</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
@@ -169,8 +169,7 @@
 /NODEFAULTLIB:LIBC %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy "$(TargetDir)*$(TargetName)$(TargetExt)" "$(YUZA_ROOT)\Bin\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG_WIN32|Win32'">

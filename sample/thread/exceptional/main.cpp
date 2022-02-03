@@ -1,20 +1,7 @@
 #include <stdio.h>
-#include <EASTL/tuple.h>
+#include <GUIConsoleFramework.h>
 
-void* operator new[](size_t size, const char* name, int flags, unsigned debugFlags, const char* file, int line)
-{
-	return new uint8_t[size];
-}
-
-void* operator new[](size_t size, size_t alignment, size_t alignmentOffset, const char* pName, int flags, unsigned debugFlags, const char* file, int line)
-{
-	return new uint8_t[size];
-}
-
-eastl::tuple<int, int, int, int> MakeSampleTuple(int a, int b)
-{
-	return eastl::make_tuple(a + b, a - b, a * b, a / b);
-}/*
+/*
 #include <minwindef.h>
 struct EHExceptionRecord
 {
@@ -41,12 +28,8 @@ int __CxxFrameHandler3(
 #include "exceptional.h"
 #include <assert.h>
 
-int main(void)
+int main_impl(int argc, char** argv)
 {
-	int add, sub, div;
-	eastl::tie(add, sub, eastl::ignore, div) = MakeSampleTuple(15, 18);
-
-	printf("%d, %d, %d\n", add, sub, div);
 
 	printf("-> simple try/catch with raise\n");
 
@@ -67,4 +50,10 @@ int main(void)
 	assert(testvar == 4);
 
 	return 0;
+}
+
+int main(int argc, char** argv)
+{
+	GUIConsoleFramework framework;
+	return framework.Run(argc, argv, main_impl);
 }
