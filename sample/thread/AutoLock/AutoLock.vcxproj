@@ -205,6 +205,9 @@
     <Lib>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy "$(TargetDir)*$(TargetName)$(TargetExt)" "$(YUZA_ROOT)\Bin\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG_WIN32|Win32'">
     <ClCompile>

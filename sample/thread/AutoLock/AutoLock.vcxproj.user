@@ -4,4 +4,9 @@
     <LocalDebuggerCommandArguments>test.txt</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommand>$(YUZA_ROOT)/bin/yuza.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(YUZA_ROOT)/bin</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>
