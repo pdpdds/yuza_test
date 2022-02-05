@@ -1,7 +1,7 @@
 #include <windef.h>
-#include <minwindef.h>
-#include <winapi.h>
 #include <stdio.h>
+#include <winapi.h>
+#include <GUIConsoleFramework.h>
 
 bool hResult = 0;
 UINT TIMER_ID_EVENT = 1001;
@@ -21,7 +21,7 @@ static void CALLBACK CallbackTimer2(HWND, UINT idEvent, DWORD*, DWORD)
 	count++;
 }
 
-int main(int argc, char* argv[])
+int main_impl(int argc, char** argv)
 {
 	HANDLE handles[2];
 	handles[0] = SetTimer(NULL, TIMER_ID_EVENT, 1000, CallbackTimer);
@@ -34,5 +34,13 @@ int main(int argc, char* argv[])
 		KillTimer(handles[i], nullptr);
 	}
 
+	printf("main thread terminated\n");
+
 	return 0;
+}
+
+int main(int argc, char** argv)
+{
+	GUIConsoleFramework framework;
+	return framework.Run(argc, argv, main_impl);
 }
