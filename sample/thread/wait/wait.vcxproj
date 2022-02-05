@@ -127,7 +127,7 @@
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\</IntDir>
-    <TargetExt>.exe</TargetExt>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG_WIN32|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -184,7 +184,7 @@
       <EntryPointSymbol>
       </EntryPointSymbol>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
-      <AdditionalDependencies>filemanager.lib;exestub.lib;libcrt.lib;libwin32.lib;systemcall.lib;</AdditionalDependencies>
+      <AdditionalDependencies>filemanager.lib;exestub.lib;libcrt.lib;libwin32.lib;systemcall.lib;yuzalib.lib;yuzaapi.lib;streams.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/support\Debug;$(YUZA_ROOT)/runtime/debug</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
@@ -202,6 +202,9 @@
     <Lib>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy "$(TargetDir)*$(TargetName)$(TargetExt)" "$(YUZA_ROOT)\Bin\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG_WIN32|Win32'">
     <ClCompile>
