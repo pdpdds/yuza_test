@@ -1,8 +1,10 @@
 #include <yuzaos.h>
 #include <iostream>
-#include <Excpt.h>
+#include <typeinfo>
 
 using namespace std;
+
+extern "C" void InstallExceptionHandler();
 
 class BaseClass
 {
@@ -27,8 +29,7 @@ int main_impl(int argc, char** argv)
 {	
 	cout << "Dynamic Cast Test" << endl;	
 
-	Exc::SetFrameHandler(true);
-	Exc::SetThrowFunction(true);
+	InstallExceptionHandler();
 
 	try
 	{
