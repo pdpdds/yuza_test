@@ -1,7 +1,6 @@
 #include <yuzaos.h>
 #include <iostream>
-#include <typeinfo>
-#include <Excpt.h>
+#include <excpt.h>
 
 using namespace std;
 
@@ -33,7 +32,7 @@ int main_impl(int argc, char** argv)
 
 	try
 	{
-		cout << "typeid Derived_Class " << typeid(Derived_Class).name() << endl;
+		cout << "typeid Derived_Class : " << typeid(Derived_Class).name() << endl;
 
 		Base_Class* ptr_a = new Derived_Class();
 		Base_Class* ptr_b = new Base_Class;

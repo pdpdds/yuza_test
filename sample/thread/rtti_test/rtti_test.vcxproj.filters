@@ -9,22 +9,5 @@
     <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Excpt.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="rtti.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="undname.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="decoration.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="typeinfo">
-      <Filter>src</Filter>
-    </None>
   </ItemGroup>
 </Project>

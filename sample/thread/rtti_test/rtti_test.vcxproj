@@ -11,14 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="decoration.cpp" />
-    <ClCompile Include="Excpt.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="rtti.cpp" />
-    <ClCompile Include="undname.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="typeinfo" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3A9BF2FB-797A-4A77-A53A-32E219F3ED5E}</ProjectGuid>
@@ -107,7 +100,7 @@
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies);yuzalib.lib;eastl.lib;eastreams.lib;yuzaapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>yuza_exception.lib;rtti.lib;eastreams.lib;eastl.lib;yuzalib.lib;yuzaapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
