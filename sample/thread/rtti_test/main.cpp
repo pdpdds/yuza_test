@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Base_Class
+class BaseClass
 {
 public:
 	virtual void DummyFunc() 
@@ -13,7 +13,7 @@ public:
 	}
 };
 
-class Derived_Class : public Base_Class 
+class DerivedClass : public BaseClass 
 { 
 public:
 	int m_testData; 
@@ -32,16 +32,16 @@ int main_impl(int argc, char** argv)
 
 	try
 	{
-		cout << "typeid Derived_Class : " << typeid(Derived_Class).name() << endl;
+		cout << "typeid Derived_Class : " << typeid(DerivedClass).name() << endl;
 
-		Base_Class* ptr_a = new Derived_Class();
-		Base_Class* ptr_b = new Base_Class;
-		Derived_Class* ptr_c;
+		BaseClass* ptr_a = new DerivedClass();
+		BaseClass* ptr_b = new BaseClass;
+		DerivedClass* ptr_c;
 
-		ptr_c = dynamic_cast<Derived_Class*>(ptr_a);
+		ptr_c = dynamic_cast<DerivedClass*>(ptr_a);
 		if (ptr_c == 0) cout << "Null pointer on first type-cast" << endl;
 
-		ptr_c = dynamic_cast<Derived_Class*>(ptr_b);
+		ptr_c = dynamic_cast<DerivedClass*>(ptr_b);
 		if (ptr_c == 0) cout << "Null pointer on second type-cast" << endl;
 
 		throw(1.5f);

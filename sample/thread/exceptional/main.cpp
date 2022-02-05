@@ -1,30 +1,6 @@
 #include <stdio.h>
 #include <GUIConsoleFramework.h>
 
-/*
-#include <minwindef.h>
-struct EHExceptionRecord
-{
-	//EXCEPTION_RECORD ExceptionRecord;
-
-};
-
-struct EHRegistrationNode
-{
-	EHRegistrationNode* prev;
-	DWORD ehhandler_code;
-	DWORD id;
-	DWORD saved_ebp;
-};
-
-int __CxxFrameHandler3(
-	EHExceptionRecord* pExcept,
-	EHRegistrationNode* pRN,
-	void* pContext,
-	void* pDC)
-{
-	return 0;
-}*/
 #include "exceptional.h"
 #include <assert.h>
 
