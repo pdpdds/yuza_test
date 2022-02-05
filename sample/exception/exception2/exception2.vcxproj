@@ -186,7 +186,7 @@
       <EntryPointSymbol>
       </EntryPointSymbol>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
-      <AdditionalDependencies>yuza_exception.lib;rtti.lib;eastreams.lib;eastl.lib;yuzalib.lib;yuzaapi.lib;systemcall.lib;libcrt.lib;libwin32.lib;exestub.lib;math.lib;filemanager.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rtti.lib;eastreams.lib;eastl.lib;yuzalib.lib;yuzaapi.lib;systemcall.lib;libcrt.lib;libwin32.lib;exestub.lib;math.lib;filemanager.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(YUZA_ROOT)/$(Configuration);$(YUZA_ROOT)/corelib/debug;$(YUZA_ROOT)/support\Debug;$(YUZA_ROOT)/runtime/debug</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>

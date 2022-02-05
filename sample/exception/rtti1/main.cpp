@@ -1,6 +1,6 @@
 #include <yuzaos.h>
 #include <iostream>
-#include <excpt.h>
+#include <Excpt.h>
 
 using namespace std;
 
@@ -25,14 +25,14 @@ public:
 
 int main_impl(int argc, char** argv)
 {	
-	cout << "Dynamic Cast Test" << endl;
+	cout << "Dynamic Cast Test" << endl;	
 
 	Exc::SetFrameHandler(true);
 	Exc::SetThrowFunction(true);
 
 	try
 	{
-		cout << "typeid Derived_Class : " << typeid(DerivedClass).name() << endl;
+		cout << "typeid DerivedClass : " << typeid(DerivedClass).name() << endl;
 
 		BaseClass* ptr_a = new DerivedClass();
 		BaseClass* ptr_b = new BaseClass;
@@ -44,12 +44,18 @@ int main_impl(int argc, char** argv)
 		ptr_c = dynamic_cast<DerivedClass*>(ptr_b);
 		if (ptr_c == 0) cout << "Null pointer on second type-cast" << endl;
 
-		throw(1.5f);
+		//throw(1.5f);
+
+		DerivedClass* p = nullptr;
+		std::cout << typeid(*p).name() << '\n';
 	}
 	catch (float ex)
 	{
 		cout << "Exception Catch " << ex << endl;
-	}	
+	}		
+	catch (const std::bad_typeid& e) {
+		std::cout << e.what() << '\n';
+	}
 
 	cout << "main terminated" << endl;
 
