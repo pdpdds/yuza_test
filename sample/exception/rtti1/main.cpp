@@ -63,7 +63,7 @@ int main_impl(int argc, char** argv)
 }
 
 int main(int argc, char** argv)
-{
+{	
 	GUIConsoleFramework framework;
 	return framework.Run(argc, argv, main_impl);
 }
