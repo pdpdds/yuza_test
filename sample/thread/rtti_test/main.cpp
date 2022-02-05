@@ -1,9 +1,9 @@
+#include <yuzaos.h>
 #include <iostream>
 #include <typeinfo>
 #include <Excpt.h>
 
 using namespace std;
-
 
 class Base_Class
 {
@@ -24,16 +24,17 @@ public:
 	}
 };
 
-int main(int argc, char** argv)
+int main_impl(int argc, char** argv)
 {	
+	cout << "Dynamic Cast Test" << endl;
+
 	Exc::SetFrameHandler(true);
 	Exc::SetThrowFunction(true);
 
-	cout << typeid(Derived_Class).name() << endl;
-
 	try
 	{
-		throw(1.5f);
+		cout << "typeid Derived_Class " << typeid(Derived_Class).name() << endl;
+
 		Base_Class* ptr_a = new Derived_Class();
 		Base_Class* ptr_b = new Base_Class;
 		Derived_Class* ptr_c;
@@ -44,11 +45,20 @@ int main(int argc, char** argv)
 		ptr_c = dynamic_cast<Derived_Class*>(ptr_b);
 		if (ptr_c == 0) cout << "Null pointer on second type-cast" << endl;
 
+		throw(1.5f);
 	}
 	catch (float ex)
 	{
-		cout << ex << endl;
+		cout << "Exception Catch " << ex << endl;
 	}	
 
+	cout << "main terminated" << endl;
+
 	return 0;
+}
+
+int main(int argc, char** argv)
+{
+	GUIConsoleFramework framework;
+	return framework.Run(argc, argv, main_impl);
 }

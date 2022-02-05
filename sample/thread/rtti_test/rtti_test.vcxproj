@@ -107,7 +107,7 @@
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies);eastreams.lib;eastl.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies);yuzalib.lib;eastl.lib;eastreams.lib;yuzaapi.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
